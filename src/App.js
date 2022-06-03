@@ -14,7 +14,7 @@ const App = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`);
+        const response =  await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
 
         setMovies(data.Search);
@@ -22,7 +22,7 @@ const App = () => {
 
 
     useEffect(() => {
-        searchMovies();
+        searchMovies("Batman");
     }, []);
     return(
         <div className="app">
